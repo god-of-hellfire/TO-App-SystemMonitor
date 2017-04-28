@@ -1,0 +1,5 @@
+--lib
+--recurse
+--shuffle
+--verbose
+--jobs 8
