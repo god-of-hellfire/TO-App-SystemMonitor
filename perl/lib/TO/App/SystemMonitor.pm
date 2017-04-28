@@ -24,7 +24,7 @@ use constant LOG_LEVEL  => {
   LOG_DEBUG   => LOG_DEBUG,
 };
 
-our $VERSION = 'v0.0.0';
+our $VERSION = 'v1.0.0';
 our $signal = '';
 our $stopSignal;
 

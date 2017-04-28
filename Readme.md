@@ -5,6 +5,10 @@ alerts automatically if a configurable threshold was exceeded.
 
 It comes as a modulino.
 
+# Version
+
+1.0.0
+
 # Installation CentOS 7
 
 ```bash
