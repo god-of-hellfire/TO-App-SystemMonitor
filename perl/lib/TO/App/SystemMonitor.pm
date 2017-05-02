@@ -257,7 +257,7 @@ sub _sendMail {
 
     syslog(LOG_INFO, 'Send alert mail to: "%s"', $params{email});
 
-    open(my $mail, "| mail -s '$params{subject}' $params{email}") or die 'Cannot open mail pipe, stopped';
+    open(my $mail, '|', "mail -s '$params{subject}' $params{email}") or die 'Cannot open mail pipe, stopped';
     print $mail $params{content};
     close($mail);
 
