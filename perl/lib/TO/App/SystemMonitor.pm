@@ -133,8 +133,9 @@ sub main {
 sub _checkMemoryUsage {
 
   eval {
-    while(my ($key, $value) = each(%{$memoryUsage->{data}})) {
+    foreach my $key (keys %{$memoryUsage->{data}}) {
 
+      my $value         = $memoryUsage->{data}->{$key};
       my $specification = $configuration->{free}->{$key};
 
       if ($value->{quota} >= $specification->{threshold}) {
@@ -257,7 +258,7 @@ sub _sendMail {
 
     syslog(LOG_INFO, 'Send alert mail to: "%s"', $params{email});
 
-    open(my $mail, '|', "mail -s '$params{subject}' $params{email}") or die 'Cannot open mail pipe, stopped';
+    open(my $mail, "|-", "mail -s '$params{subject}' $params{email}") or die 'Cannot open mail pipe, stopped';
     print $mail $params{content};
     close($mail);
 

@@ -1,6 +1,6 @@
 ---
 
-logLevel: LOG_WARNING
+logLevel: LOG_WARN
 
 pollingInterval: 600
 
@@ -8,12 +8,12 @@ free:
   mem:
     row: 1
     pattern: '^Mem: \s+ (?<total>\d+) \s+ (?<used>\d+) \s+ (?<free>\d+) \s+ (?<shared>\d+) \s+ (?<buffCache>\d+) \s+ (?<available>\d+)'
-    threshold: 0.85
+    threshold: 0.05
     notification:
       email:
   swap:
     row: 2
     pattern: '^Swap: \s+ (?<total>\d+) \s+ (?<used>\d+) \s+ (?<free>\d+) \s+'
-    threshold: 0.2
+    threshold: 0.0
     notification:
       email:
