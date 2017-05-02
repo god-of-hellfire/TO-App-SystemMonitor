@@ -7,7 +7,7 @@ It comes as a modulino.
 
 # Version
 
-1.0.0
+1.0.1
 
 # Installation CentOS 7
 
